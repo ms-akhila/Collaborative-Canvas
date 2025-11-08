@@ -45,17 +45,18 @@ It allows multiple users to draw on the same canvas at the same time, with chang
 
 # Time Spent on the Project
 
-**Total Time:** Around 5 hours  
+**Total Time:** Around 15 hours  
 
 | Task | Time Spent |
 |------|-------------|
-| Project setup and environment configuration | 0.5 hours |
-| Canvas and drawing logic implementation | 0.5 hours |
-| Real-time synchronization with Socket.io | 2 hours |
-| Undo/Redo and cursor management | 1 hours |
-| Testing, debugging, and documentation | 1 hours |
+| Project setup and environment configuration | 3 hours |
+| Canvas and drawing logic implementation | 2 hours |
+| Real-time synchronization with Socket.io | 6 hours |
+| Undo/Redo and cursor management | 2 hours |
+| Testing, debugging, and documentation | 2 hours |
 
 ---
 
 **Developed by:** [Your Name]  
 **Project Title:** Real-Time Collaborative Canvas
+
