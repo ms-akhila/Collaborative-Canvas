@@ -57,6 +57,7 @@ It allows multiple users to draw on the same canvas at the same time, with chang
 
 ---
 
-**Developed by:** [Your Name]  
+**Developed by:** M S Akhila 
 **Project Title:** Real-Time Collaborative Canvas
+
 
