@@ -84,7 +84,6 @@ These optimizations make the app fast and smooth even when several users draw at
 ## Conflict Resolution
 
 - **Simultaneous Drawing:** If multiple users draw at the same time, all strokes are recorded in the order they are received by the server. The later stroke appears on top.  
-- **Undo Isolation:** Undo only affects the strokes of the user who triggered it, preventing others’ work from being removed accidentally.  
 - **Global Clear:** The clear button removes all drawings for everyone and resets the shared state.  
 - **Consistent View:** Each client always follows the server’s version of the canvas, so conflicts are automatically resolved by the latest server update.
 
@@ -93,3 +92,4 @@ These optimizations make the app fast and smooth even when several users draw at
 ## Summary
 
 The Collaborative Canvas uses a simple server-authoritative model with WebSockets to synchronize drawing events between multiple users in real time. The approach balances simplicity, speed, and consistency, making it ideal for a student project demonstrating real-time collaboration.
+
