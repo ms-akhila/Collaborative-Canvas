@@ -1,0 +1,109 @@
+/* client/style.css
+   Minimal + improved cursor & user-badge UI for Collaborative Canvas
+*/
+
+/* Page reset */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fafafa;
+}
+
+/* ===== Toolbar ===== */
+#toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+}
+#toolbar label { font-size: 14px; color: #333; }
+#toolbar input[type="color"] { width: 36px; height: 28px; border: none; cursor: pointer; }
+#toolbar input[type="range"] { cursor: pointer; }
+#toolbar button {
+  padding: 6px 10px;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#toolbar button:hover { background: #eee; }
+#toolbar button.active { background: #333; color: #fff; }
+#status { margin-left: auto; font-size: 13px; color: #555; }
+
+/* ===== User badges in toolbar (stable identity mapping) ===== */
+#usersBox { display: flex; gap: 12px; align-items: center; margin-left: 12px; }
+.user-badge {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: #333;
+  white-space: nowrap;
+}
+.user-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,0.12);
+}
+
+/* ===== Canvas area and sizing ===== */
+main { height: calc(100% - 48px); background: #fff; }
+#canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+  touch-action: none; /* prevent touch scroll while drawing */
+  pointer-events: auto;
+}
+
+/* ===== Transient remote cursor (dot + initials label) ===== */
+.remote-cursor {
+  position: absolute;
+  pointer-events: none; /* never block canvas input */
+  transform: translate(-50%,-120%); /* position slightly above pointer */
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 200ms ease, transform 120ms ease;
+  opacity: 1;
+  will-change: transform, opacity;
+}
+
+/* the colored round dot */
+.remote-cursor .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0,0,0,0.12);
+  border: 2px solid #fff;
+}
+
+/* small label showing short id / initials */
+.remote-cursor .label {
+  background: rgba(0,0,0,0.72);
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* hidden / faded state (auto-hide) */
+.remote-cursor.hidden { opacity: 0; pointer-events: none; }
+
+/* Compatibility class for older name used (.cursor-dot) */
+.cursor-dot { position: absolute; pointer-events: none; }
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  #toolbar { flex-wrap: wrap; justify-content: center; }
+  #usersBox { margin-left: 6px; gap: 8px; }
+}

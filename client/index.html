@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Collaborative Canvas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="toolbar">
+    <label>Color: <input id="colorPicker" type="color" value="#000000"></label>
+    <label>Size: <input id="sizePicker" type="range" min="1" max="40" value="4"></label>
+    <button id="drawBtn">Draw</button>
+    <button id="eraserBtn">Eraser</button>
+    <button id="undoBtn">Undo</button>
+    <button id="redoBtn">Redo</button>
+    <button id="clearBtn">Clear</button>
+    <div id="usersBox" style="margin-left:12px"></div>
+    <span id="status" style="margin-left:auto">Local Mode</span>
+  </header>
+
+  <main>
+    <canvas id="canvas"></canvas>
+  </main>
+
+  <!-- socket.io client (must be before module) -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

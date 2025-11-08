@@ -1,0 +1,16 @@
+{
+  "name": "collaborative-canvas",
+  "version": "1.0.0",
+  "description": "A simple real-time collaborative drawing app using Node.js, Socket.io, and HTML5 Canvas",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "keywords": [],
+  "author": "Akhila M S",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}
